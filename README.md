@@ -27,3 +27,5 @@ https://nft-marketplace-umber.vercel.app/
 <br />
 This deployment is done using vercel for demo purposes.
 The smart contract is deployed on polygon mumbai testnet.
+
+todo : implement go image tranformation server, make ui responsive :')
