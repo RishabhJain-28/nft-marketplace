@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <div className="flex flex-nowrap w-full h-[100vh] relative bg-black">
       <nav className=" bg-gradient-to-r from-gray-700 via-gray-900 to-black  text-white w-[300px]">
-        <p className="text-2xl font-bold m-5">Metaverse NFTs Galaxy</p>
+        <p className="text-2xl font-bold m-5">NFT Galaxy</p>
         <div className="flex flex-col mt-4">
           <LinkComp
             label={"Home"}
