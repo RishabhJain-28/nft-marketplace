@@ -52,35 +52,44 @@ export default function CreateItem() {
       createNFTOnMarket(url);
     } catch (error) {
       console.log("Error uploading file: ", error);
-    } finally {
-      setLoading(false);
     }
   }
 
   async function createNFTOnMarket(url) {
-    const web3Modal = new Web3Modal();
-    const connection = await web3Modal.connect();
-    const provider = new ethers.providers.Web3Provider(connection);
-    const signer = provider.getSigner();
+    try {
+      const web3Modal = new Web3Modal();
+      const connection = await web3Modal.connect();
+      const provider = new ethers.providers.Web3Provider(connection);
+      const signer = provider.getSigner();
 
-    let contract = new ethers.Contract(nftaddress, NFT.abi, signer);
-    let transaction = await contract.createToken(url);
-    let tx = await transaction.wait();
-    let event = tx.events[0];
-    let value = event.args[2];
-    let tokenId = value.toNumber();
+      let contract = new ethers.Contract(nftaddress, NFT.abi, signer);
+      let transaction = await contract.createToken(url);
+      let tx = await transaction.wait();
+      let event = tx.events[0];
+      let value = event.args[2];
+      let tokenId = value.toNumber();
 
-    const price = ethers.utils.parseUnits(formInput.price, "ether");
+      const price = ethers.utils.parseUnits(formInput.price, "ether");
 
-    contract = new ethers.Contract(nftmarketaddress, Market.abi, signer);
-    let listingPrice = await contract.getListingPrice();
-    listingPrice = listingPrice.toString();
+      contract = new ethers.Contract(nftmarketaddress, Market.abi, signer);
+      let listingPrice = await contract.getListingPrice();
+      listingPrice = listingPrice.toString();
 
-    transaction = await contract.createMarketItem(nftaddress, tokenId, price, {
-      value: listingPrice,
-    });
-    await transaction.wait();
-    router.push("/");
+      transaction = await contract.createMarketItem(
+        nftaddress,
+        tokenId,
+        price,
+        {
+          value: listingPrice,
+        }
+      );
+      await transaction.wait();
+      router.push("/");
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (

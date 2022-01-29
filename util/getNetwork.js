@@ -3,7 +3,7 @@ const networkConfig = {
     jsonrpcEndpoint: "",
   },
   testnet: {
-    jsonrpcEndpoint: "",
+    jsonrpcEndpoint: "https://rpc-mumbai.maticvigil.com",
   },
   localhost: {
     jsonrpcEndpoint: "http://localhost:8545",
