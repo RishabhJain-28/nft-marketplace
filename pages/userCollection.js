@@ -67,7 +67,7 @@ export default function UserCollection() {
   if (!nfts.length)
     return (
       <h1 className="  text-[#0cafa9] px-20 py-10 text-3xl">
-        The Collection is empty :')
+        {"The Collection is empty :')"}
       </h1>
     );
 

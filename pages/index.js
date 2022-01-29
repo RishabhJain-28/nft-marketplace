@@ -89,7 +89,7 @@ export default function Home() {
   if (!nfts.length)
     return (
       <h1 className="  text-[#0cafa9] px-20 py-10 text-3xl">
-        The market is empty :')
+        {"The market is empty :')"}
       </h1>
     );
 
