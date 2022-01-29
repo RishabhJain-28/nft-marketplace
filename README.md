@@ -1,15 +1,29 @@
-# Basic Sample Hardhat Project
+# NFT Galaxy
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+## NFT Galaxy is a simple nft marketplace running on Polygon PoS chain.
 
-Try running some of the following tasks:
+<br />
+
+# Technologies Used
+
+- NextJS for building the frontend application
+- EthersJs for connecting the frontend to the blockchain
+- Solidity for writing smart contracts for ethereum
+- Hardhat for testing and deployment of the smart contracts
+- ipfs for uploading token meta data
+
+Infura is used for deploying the smart contract on the testnet.
+The NFT smart contract implements ERC20 token standard using open zepplin.
 
 ```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
+yarn comile
+yarn build
+yarn deploy:local
+yarn deploy:mumbai
+yarn node:local
 ```
+
+https://nft-marketplace-umber.vercel.app/
+<br />
+This deployment is done using vercel for demo purposes.
+The smart contract is deployed on polygon mumbai testnet.
