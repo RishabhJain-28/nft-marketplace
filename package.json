@@ -2,6 +2,7 @@
   "name": "nft-marketplace",
   "private": true,
   "scripts": {
+    "compile": "npx hardhat compile",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
